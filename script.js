@@ -9,7 +9,16 @@ const nav5 = document.getElementById("nav-5 ");
 function toggleNav() {
   // Toggle: Menu Bars Open/closed
   menuBars.classList.toggle("change");
+
+  // Toggle: Menu Active
+  overlay.classList.toggle("overlay-active");
+  if (overlay.classList.contains("overlay-active")) {
+    overlay.classList.replace("overlay-slide-left", "overlay-slide-right");
+  } else {
+    overlay.classList.add("overlay-slide-right", "overlay-slide-left");
+  }
 }
+
 // Event Listners
 
 menuBars.addEventListener("click", toggleNav);
